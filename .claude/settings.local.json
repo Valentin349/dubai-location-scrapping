@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:pointr-v9-api-docs.pointr.tech)",
+      "Bash(curl -s \"https://dmassetsprodcdn.azureedge.net/main/scripts/main.js?refresh=305042026\")",
+      "Bash(curl -s \"https://dmassetsprodcdn.azureedge.net/main/scripts/vendors-new.js?refresh=3\")",
+      "WebFetch(domain:www.dubaihillsmall.ae)",
+      "WebFetch(domain:www.malloftheemirates.com)"
+    ]
+  }
+}
