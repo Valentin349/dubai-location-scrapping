@@ -2,7 +2,8 @@
   {
     "name": "% Arabica",
     "url": "https://www.malloftheemirates.com/en/dining-directory/arabica",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "+97143292200",
     "floor_abbreviation": "L1",
     "nearest_parking": "D",
@@ -12,7 +13,8 @@
   {
     "name": "&More by Sheraton (Temporarily Closed)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/more-by-sheraton",
-    "level": "Level 5",
+    "floor": "Level 5",
+    "unit": null,
     "phone": "tel: +9714377 2352",
     "floor_abbreviation": "L5",
     "nearest_parking": "D",
@@ -22,7 +24,8 @@
   {
     "name": "Al Hallab Restaurant And Sweets",
     "url": "https://www.malloftheemirates.com/en/dining-directory/al-hallab-restaurant-sweets",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +97143411880",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -32,7 +35,8 @@
   {
     "name": "Albaik",
     "url": "https://www.malloftheemirates.com/en/dining-directory/albaik",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel:  +971507687602",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -42,7 +46,8 @@
   {
     "name": "Antonia Restaurant",
     "url": "https://www.malloftheemirates.com/en/dining-directory/antonia-restaurant",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +97143514588",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -52,7 +57,8 @@
   {
     "name": "Aspen Café - Kempinski Hotel Mall of the Emirates",
     "url": "https://www.malloftheemirates.com/en/dining-directory/aspen-caf%c3%a9",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97144095999",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -62,7 +68,8 @@
   {
     "name": "Aux Merveilleux de Fred",
     "url": "https://www.malloftheemirates.com/en/dining-directory/aux-merveilleux-de-fred",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "+97145299681",
     "floor_abbreviation": "L1",
     "nearest_parking": "B",
@@ -72,7 +79,8 @@
   {
     "name": "Avalanche Cafe (In Ski Dubai)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/avalanche-cafe",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97144094164",
     "floor_abbreviation": "GF",
     "nearest_parking": "",
@@ -82,7 +90,8 @@
   {
     "name": "Baskin Robbins",
     "url": "https://www.malloftheemirates.com/en/dining-directory/baskin-robbins",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971545861030",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -92,7 +101,8 @@
   {
     "name": "Bateel",
     "url": "https://www.malloftheemirates.com/en/dining-directory/bateel",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143931536",
     "floor_abbreviation": "L1",
     "nearest_parking": "D",
@@ -102,7 +112,8 @@
   {
     "name": "Ben's Cookies",
     "url": "https://www.malloftheemirates.com/en/dining-directory/bens-cookies",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143794314",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -112,7 +123,8 @@
   {
     "name": "Besh Turkish Kitchen",
     "url": "https://www.malloftheemirates.com/en/dining-directory/besh-turkish-kitchen",
-    "level": "Level 5",
+    "floor": "Level 5",
+    "unit": null,
     "phone": "tel: +97143772353",
     "floor_abbreviation": "L5",
     "nearest_parking": "D & Sheraton",
@@ -122,7 +134,8 @@
   {
     "name": "Bombay Chowpatty",
     "url": "https://www.malloftheemirates.com/en/dining-directory/bombay-chowpatty",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel: +971565208227",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -132,7 +145,8 @@
   {
     "name": "Boon Coffee Roasters (inside Crate & Barrel)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/boon-coffee-roasters",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143990125",
     "floor_abbreviation": "L1",
     "nearest_parking": "",
@@ -142,7 +156,8 @@
   {
     "name": "Bread Ahead",
     "url": "https://www.malloftheemirates.com/en/dining-directory/bread-ahead",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "Tel: +97143448895",
     "floor_abbreviation": "L1",
     "nearest_parking": "D",
@@ -152,7 +167,8 @@
   {
     "name": "Bred",
     "url": "https://www.malloftheemirates.com/en/dining-directory/bred",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +971568632907",
     "floor_abbreviation": "L1",
     "nearest_parking": "D",
@@ -162,7 +178,8 @@
   {
     "name": "Burger King GF",
     "url": "https://www.malloftheemirates.com/en/dining-directory/burger-king-gf",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971600522224",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -172,7 +189,8 @@
   {
     "name": "Café Bateel",
     "url": "https://www.malloftheemirates.com/en/dining-directory/cafe-bateel",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143475165",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -182,7 +200,8 @@
   {
     "name": "Candy Bar",
     "url": "https://www.malloftheemirates.com/en/dining-directory/candy-bar",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel: +97143410988",
     "floor_abbreviation": "GF",
     "nearest_parking": "C",
@@ -192,7 +211,8 @@
   {
     "name": "Candy Hearts",
     "url": "https://www.malloftheemirates.com/en/dining-directory/candy-heart",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143410988",
     "floor_abbreviation": "GF",
     "nearest_parking": "B",
@@ -202,7 +222,8 @@
   {
     "name": "Casa Pons",
     "url": "https://www.malloftheemirates.com/en/dining-directory/casa-pons",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971526830276",
     "floor_abbreviation": "GF",
     "nearest_parking": "C",
@@ -212,7 +233,8 @@
   {
     "name": "Charley's Philly Steaks",
     "url": "https://www.malloftheemirates.com/en/dining-directory/charleys-philly-steaks",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel: +971524339575",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -222,7 +244,8 @@
   {
     "name": "Chicking",
     "url": "https://www.malloftheemirates.com/en/dining-directory/chicking",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "+971543091148",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -232,7 +255,8 @@
   {
     "name": "Chinese Palace",
     "url": "https://www.malloftheemirates.com/en/dining-directory/chinese-palace",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143541688",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -242,7 +266,8 @@
   {
     "name": "Chowking",
     "url": "https://www.malloftheemirates.com/en/dining-directory/chowking",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97145483215",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -252,7 +277,8 @@
   {
     "name": "Cinnabon",
     "url": "https://www.malloftheemirates.com/en/dining-directory/cinnabon",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel: +97143923251",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -262,7 +288,8 @@
   {
     "name": "Cinnamood",
     "url": "https://www.malloftheemirates.com/en/dining-directory/cinnamood",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +971582092163",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -272,7 +299,8 @@
   {
     "name": "Cipriani Dolci",
     "url": "https://www.malloftheemirates.com/en/dining-directory/cipriani-dolci",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel: +971504633153",
     "floor_abbreviation": "GF",
     "nearest_parking": "B",
@@ -282,7 +310,8 @@
   {
     "name": "Cold Stone Creamery",
     "url": "https://www.malloftheemirates.com/en/dining-directory/cold-stone-creamery",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97155975798",
     "floor_abbreviation": "L1",
     "nearest_parking": "C",
@@ -292,7 +321,8 @@
   {
     "name": "Common Grounds",
     "url": "https://www.malloftheemirates.com/en/dining-directory/common-grounds",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "+971504781094",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -302,7 +332,8 @@
   {
     "name": "Costa Coffee",
     "url": "https://www.malloftheemirates.com/en/dining-directory/costa-coffee",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "+97143401009",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -312,7 +343,8 @@
   {
     "name": "Dar Al Halabi",
     "url": "https://www.malloftheemirates.com/en/dining-directory/dar-al-halabi",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +971 56 188 3847",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -322,7 +354,8 @@
   {
     "name": "Din Tai Fung",
     "url": "https://www.malloftheemirates.com/en/dining-directory/din-tai-fung",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "+97142651288",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -332,7 +365,8 @@
   {
     "name": "Dunkin'",
     "url": "https://www.malloftheemirates.com/en/dining-directory/dunkin'",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97145865035",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -342,7 +376,8 @@
   {
     "name": "Döner & Gyros",
     "url": "https://www.malloftheemirates.com/en/dining-directory/doner-gyros",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97142230946",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -352,7 +387,8 @@
   {
     "name": "Eat Greek",
     "url": "https://www.malloftheemirates.com/en/dining-directory/eat-greek",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +97143255091",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -362,7 +398,8 @@
   {
     "name": "Encounter Coffee",
     "url": "https://www.malloftheemirates.com/en/dining-directory/encounter-coffee",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "Tel: +971562197757",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -372,7 +409,8 @@
   {
     "name": "Eugène Eugène (Inside Kempinski Hotel)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/eugene",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel: +97143798963",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -382,7 +420,8 @@
   {
     "name": "Garrett Popcorn Shops",
     "url": "https://www.malloftheemirates.com/en/dining-directory/garrett-popcorn-shops",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +971521042841",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -392,7 +431,8 @@
   {
     "name": "GF Ferre Chocolate Bar",
     "url": "https://www.malloftheemirates.com/en/dining-directory/gf-ferre-chocolate-bar",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +971561883849",
     "floor_abbreviation": "L1",
     "nearest_parking": "C",
@@ -402,7 +442,8 @@
   {
     "name": "Godiva",
     "url": "https://www.malloftheemirates.com/en/dining-directory/godiva",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143478440",
     "floor_abbreviation": "L1",
     "nearest_parking": "D",
@@ -412,7 +453,8 @@
   {
     "name": "Grand Bazaar",
     "url": "https://www.malloftheemirates.com/en/dining-directory/grand-bazaar",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971507549860",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -422,7 +464,8 @@
   {
     "name": "Hafiz Mustafa 1864",
     "url": "https://www.malloftheemirates.com/en/dining-directory/hafiz-mustafa-1864",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97142970759",
     "floor_abbreviation": "L1",
     "nearest_parking": "D/ Entrance C",
@@ -432,7 +475,8 @@
   {
     "name": "Hardee's",
     "url": "https://www.malloftheemirates.com/en/dining-directory/hardees",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971556026195",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -442,7 +486,8 @@
   {
     "name": "Hatam",
     "url": "https://www.malloftheemirates.com/en/dining-directory/hatam",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971600500002",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -452,7 +497,8 @@
   {
     "name": "HuQQabaz Garden",
     "url": "https://www.malloftheemirates.com/en/dining-directory/huqqabaz-garden",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97180047229",
     "floor_abbreviation": "GF",
     "nearest_parking": "Outdoors of Main Entrance",
@@ -462,7 +508,8 @@
   {
     "name": "Häagen-Dazs",
     "url": "https://www.malloftheemirates.com/en/dining-directory/haagen-dazs",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143407063",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -472,7 +519,8 @@
   {
     "name": "Illy Café",
     "url": "https://www.malloftheemirates.com/en/dining-directory/illy-cafe",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97145687887",
     "floor_abbreviation": "L1",
     "nearest_parking": "C",
@@ -482,7 +530,8 @@
   {
     "name": "Intermission Cafe (Inside New Covent Garden Theatre)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/intermission-cafe-inside-new-covent-garden-theatre",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +97142966205",
     "floor_abbreviation": "L2",
     "nearest_parking": "A",
@@ -492,7 +541,8 @@
   {
     "name": "JOE & THE JUICE",
     "url": "https://www.malloftheemirates.com/en/dining-directory/joe-and-the-juice",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97145547729",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -502,7 +552,8 @@
   {
     "name": "Jollibee",
     "url": "https://www.malloftheemirates.com/en/dining-directory/jollibee",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971600587000",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -512,7 +563,8 @@
   {
     "name": "Jones The Grocer",
     "url": "https://www.malloftheemirates.com/en/dining-directory/jones-the-grocer-cafe",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143851033",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -522,7 +574,8 @@
   {
     "name": "Kava & Chai",
     "url": "https://www.malloftheemirates.com/en/dining-directory/kava-and-chai",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "+97142277540",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -532,7 +585,8 @@
   {
     "name": "Kelly's Cajun Grills",
     "url": "https://www.malloftheemirates.com/en/dining-directory/kellys-cajun-grills",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97142347166",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -542,7 +596,8 @@
   {
     "name": "KFC (East)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/kfc-east",
-    "level": "Ground floor",
+    "floor": "Ground floor",
+    "unit": null,
     "phone": "tel: +971600522252",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -552,7 +607,8 @@
   {
     "name": "KOI Thé",
     "url": "https://www.malloftheemirates.com/en/dining-directory/koi-the",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "Tel: +97142590601",
     "floor_abbreviation": "L1",
     "nearest_parking": "C",
@@ -562,7 +618,8 @@
   {
     "name": "Konjiki Hototogisu / Ramen House",
     "url": "https://www.malloftheemirates.com/en/dining-directory/konjiki-hototogisu-ramen-house",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "Tel: +97142276811",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -572,7 +629,8 @@
   {
     "name": "Krispy Kreme",
     "url": "https://www.malloftheemirates.com/en/dining-directory/krispy-kreme",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971556026558",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -582,7 +640,8 @@
   {
     "name": "Laduree",
     "url": "https://www.malloftheemirates.com/en/dining-directory/laduree",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143232782",
     "floor_abbreviation": "L1",
     "nearest_parking": "B",
@@ -592,7 +651,8 @@
   {
     "name": "Läderach Chocolatier Suisse",
     "url": "https://www.malloftheemirates.com/en/dining-directory/l%c3%a4derach-chocolatier-suisse",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97142982298",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -602,7 +662,8 @@
   {
     "name": "L’ETO Caffe",
     "url": "https://www.malloftheemirates.com/en/dining-directory/leto",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97142662875",
     "floor_abbreviation": "L1",
     "nearest_parking": "D",
@@ -612,7 +673,8 @@
   {
     "name": "Maison Margiela Café",
     "url": "https://www.malloftheemirates.com/en/dining-directory/maison-margiela-caf%c3%a9",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "Tel: +97142836276",
     "floor_abbreviation": "L1",
     "nearest_parking": "B",
@@ -622,7 +684,8 @@
   {
     "name": "Mashrou3 Tabkha",
     "url": "https://www.malloftheemirates.com/en/dining-directory/mashrou3-tabkha",
-    "level": "Ground Level",
+    "floor": "Ground Level",
+    "unit": null,
     "phone": "tel: +97142272982",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -632,7 +695,8 @@
   {
     "name": "Massimo Gelato",
     "url": "https://www.malloftheemirates.com/en/dining-directory/massimo-gelato",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971585988115",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -642,7 +706,8 @@
   {
     "name": "McDonald's (East)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/mcdonalds-east",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971600588885",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -652,7 +717,8 @@
   {
     "name": "Nando’s",
     "url": "https://www.malloftheemirates.com/en/dining-directory/nandos",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +97143343479",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -662,7 +728,8 @@
   {
     "name": "North 28",
     "url": "https://www.malloftheemirates.com/en/dining-directory/north-28",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971 4094132",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -672,7 +739,8 @@
   {
     "name": "O'Learys Sports Bar",
     "url": "https://www.malloftheemirates.com/en/dining-directory/o'learys-sports-bar",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "Tel: +97143609963",
     "floor_abbreviation": "L2",
     "nearest_parking": "D & Sheraton",
@@ -682,7 +750,8 @@
   {
     "name": "OAnjo (Temporarily Closed)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/oanjo",
-    "level": "L24 Sheraton",
+    "floor": "L24 Sheraton",
+    "unit": null,
     "phone": "Tel: +97143772007",
     "floor_abbreviation": "L24",
     "nearest_parking": "D & Sheraton",
@@ -692,7 +761,8 @@
   {
     "name": "P.F. Chang's",
     "url": "https://www.malloftheemirates.com/en/dining-directory/pf-changs",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97144190509",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -702,7 +772,8 @@
   {
     "name": "Papa John’s Pizza",
     "url": "https://www.malloftheemirates.com/en/dining-directory/papa-johns-pizza",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143410490",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -712,7 +783,8 @@
   {
     "name": "Patchi",
     "url": "https://www.malloftheemirates.com/en/dining-directory/patchi",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143472755",
     "floor_abbreviation": "L1",
     "nearest_parking": "C",
@@ -722,7 +794,8 @@
   {
     "name": "PAUL",
     "url": "https://www.malloftheemirates.com/en/dining-directory/paul",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143414844",
     "floor_abbreviation": "GF",
     "nearest_parking": "B & Main Entrance",
@@ -732,7 +805,8 @@
   {
     "name": "PAUL LE CAFÉ",
     "url": "https://www.malloftheemirates.com/en/dining-directory/paul-le-cafe",
-    "level": "Ground Level",
+    "floor": "Ground Level",
+    "unit": null,
     "phone": "Tel: +97143414644",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -742,7 +816,8 @@
   {
     "name": "Pinkberry",
     "url": "https://www.malloftheemirates.com/en/dining-directory/pinkberry",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97144190512",
     "floor_abbreviation": "GF",
     "nearest_parking": "C",
@@ -752,7 +827,8 @@
   {
     "name": "Pizza Hut (GF)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/pizza-hut-gf",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel +971600569999",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -762,7 +838,8 @@
   {
     "name": "Ralph's Coffee",
     "url": "https://www.malloftheemirates.com/en/dining-directory/ralph's-coffee",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +971501719843",
     "floor_abbreviation": "FF",
     "nearest_parking": "B",
@@ -772,7 +849,8 @@
   {
     "name": "Rich Delights",
     "url": "https://www.malloftheemirates.com/en/dining-directory/rich-delights",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971547516154",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -782,7 +860,8 @@
   {
     "name": "Said Dal 1923",
     "url": "https://www.malloftheemirates.com/en/dining-directory/said-dal-1923",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "Tel: +97143934544",
     "floor_abbreviation": "L2",
     "nearest_parking": "B",
@@ -792,7 +871,8 @@
   {
     "name": "Salero Tapas & Bodega",
     "url": "https://www.malloftheemirates.com/en/dining-directory/salero-tapas-bodega",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97144095888",
     "floor_abbreviation": "GF",
     "nearest_parking": "A & Kempinski",
@@ -802,7 +882,8 @@
   {
     "name": "Sanctuary Lounge",
     "url": "https://www.malloftheemirates.com/en/dining-directory/sanctuary-lounge",
-    "level": "Level 24",
+    "floor": "Level 24",
+    "unit": null,
     "phone": "tel: +97143772382",
     "floor_abbreviation": "L24",
     "nearest_parking": "Sheraton Mall of the Emirates",
@@ -812,7 +893,8 @@
   {
     "name": "Shake Shack",
     "url": "https://www.malloftheemirates.com/en/dining-directory/shake-shack",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97144190510",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -822,7 +904,8 @@
   {
     "name": "Spartan Sports Café",
     "url": "https://www.malloftheemirates.com/en/dining-directory/Spartan-Lounge",
-    "level": "Level 5",
+    "floor": "Level 5",
+    "unit": null,
     "phone": "Tel: +97143772356",
     "floor_abbreviation": "L5",
     "nearest_parking": "Sheraton & D",
@@ -832,7 +915,8 @@
   {
     "name": "Starbucks (Ground Level)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/starbucks-ground-level",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97144190542",
     "floor_abbreviation": "GF",
     "nearest_parking": "B & Main entrance",
@@ -842,7 +926,8 @@
   {
     "name": "Starbucks (inside Border’s)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/starbucks-inside-borders",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +971 44190161",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -852,7 +937,8 @@
   {
     "name": "Starbucks (Level 1)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/starbucks-level-1",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97147046911",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -862,7 +948,8 @@
   {
     "name": "Starbucks (Level 2)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/starbucks-level-2",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +97144190162",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -872,7 +959,8 @@
   {
     "name": "Sweet INC (Inside Vox Cinemas)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/sweet-inc-(-inside-vox-cinema)",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "Tel: +971600599905",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -882,7 +970,8 @@
   {
     "name": "Taqado Mexican Kitchen",
     "url": "https://www.malloftheemirates.com/en/dining-directory/taqado-mexican-kitchen",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143769160",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -892,7 +981,8 @@
   {
     "name": "Texas Chicken",
     "url": "https://www.malloftheemirates.com/en/dining-directory/texas-chicken",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143851256",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -902,7 +992,8 @@
   {
     "name": "The 9 Lounge (Closed for Renovation)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/the-9-lounge-(-inside-kempinski-hotel-)",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97144099180",
     "floor_abbreviation": "GF",
     "nearest_parking": "",
@@ -912,7 +1003,8 @@
   {
     "name": "The Cheesecake Factory",
     "url": "https://www.malloftheemirates.com/en/dining-directory/the-cheesecake-factory",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97144190499",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -922,7 +1014,8 @@
   {
     "name": "The Dose",
     "url": "https://www.malloftheemirates.com/en/dining-directory/the-dose",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel: +971 4 258 0249",
     "floor_abbreviation": "GF",
     "nearest_parking": "Entrance A",
@@ -932,7 +1025,8 @@
   {
     "name": "The Lighthouse",
     "url": "https://www.malloftheemirates.com/en/dining-directory/the-lighthouse",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +97142380027",
     "floor_abbreviation": "L2",
     "nearest_parking": "B",
@@ -942,7 +1036,8 @@
   {
     "name": "Tim Hortons",
     "url": "https://www.malloftheemirates.com/en/dining-directory/tim-hortons",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "Tel: +971565268739",
     "floor_abbreviation": "L1",
     "nearest_parking": "C",
@@ -952,7 +1047,8 @@
   {
     "name": "Tonic Juice Bars",
     "url": "https://www.malloftheemirates.com/en/dining-directory/tonic-juice-bars",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143414447",
     "floor_abbreviation": "GF",
     "nearest_parking": "D & C",
@@ -962,7 +1058,8 @@
   {
     "name": "Tribes",
     "url": "https://www.malloftheemirates.com/en/dining-directory/tribes",
-    "level": "Level 2",
+    "floor": "Level 2",
+    "unit": null,
     "phone": "tel: +97143950660",
     "floor_abbreviation": "L2",
     "nearest_parking": "C",
@@ -972,7 +1069,8 @@
   {
     "name": "Umami (GF)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/umami-(-gf-)",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel :+97143356466",
     "floor_abbreviation": "GF",
     "nearest_parking": "D",
@@ -982,7 +1080,8 @@
   {
     "name": "Vera Versilia (Inside Kempinski Hotel)",
     "url": "https://www.malloftheemirates.com/en/dining-directory/vera-versilia",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +971 44095111",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -992,7 +1091,8 @@
   {
     "name": "Waffries",
     "url": "https://www.malloftheemirates.com/en/dining-directory/waffries",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "tel: +97143234006",
     "floor_abbreviation": "G",
     "nearest_parking": "D",
@@ -1002,7 +1102,8 @@
   {
     "name": "Xu",
     "url": "https://www.malloftheemirates.com/en/dining-directory/xu--inside-kempinski-hotel-",
-    "level": "Ground Floor",
+    "floor": "Ground Floor",
+    "unit": null,
     "phone": "Tel: +97143946252",
     "floor_abbreviation": "GF",
     "nearest_parking": "A",
@@ -1012,7 +1113,8 @@
   {
     "name": "Yatsudoki Chateraise",
     "url": "https://www.malloftheemirates.com/en/dining-directory/yatsudoki-chateraise",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +97143410223",
     "floor_abbreviation": "L1",
     "nearest_parking": "A",
@@ -1022,7 +1124,8 @@
   {
     "name": "Yoku Moku",
     "url": "https://www.malloftheemirates.com/en/dining-directory/yoku-moku",
-    "level": "Level 1",
+    "floor": "Level 1",
+    "unit": null,
     "phone": "tel: +971565374332",
     "floor_abbreviation": "L1",
     "nearest_parking": "C",
