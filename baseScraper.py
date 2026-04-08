@@ -37,16 +37,16 @@ class BaseScraper(ABC):
             directions_url (str | None)
 
         Invariant enforced by run(): every record must have at least one of:
-            - floor or unit        (location info)
-            - map_url or directions_url  (navigation info)
-            - content              (structured content)
+            - floor or unit                    (location info)
+            - map_url or directions_url        (navigation info)
+            - content                          (structured content)
         """
 
     @staticmethod
     def _query_2gis(name: str, lng: float, lat: float, radius: int = 500):
-        """Query the 2GIS catalog API and return (lat, lon, short_id) or None."""
+        """Query the 2GIS catalog API and return (lat, lon, shortId) or None."""
         try:
-            r = requests.get(TWOGIS_CATALOG_API, params={
+            response = requests.get(TWOGIS_CATALOG_API, params={
                 "q": name,
                 "point": f"{lng},{lat}",
                 "radius": radius,
@@ -55,47 +55,53 @@ class BaseScraper(ABC):
                 "locale": "en_AE",
                 "type": "branch",
             }, timeout=10)
-            data = r.json()
-            items = (data.get("result") or {}).get("items") or []
+            responseData = response.json()
+            items = (responseData.get("result") or {}).get("items") or []
+
             if not items:
                 return None
-            item = items[0]
-            point = item.get("point", {})
-            item_lat = point.get("lat")
-            item_lon = point.get("lon")
-            full_id = item.get("id", "")
-            short_id = full_id.split("_")[0] if full_id else None
-            if item_lat and item_lon and short_id:
-                return item_lat, item_lon, short_id
+            
+            firstItem = items[0]
+            itemPoint = firstItem.get("point", {})
+            itemLat = itemPoint.get("lat")
+            itemLon = itemPoint.get("lon")
+            fullId = firstItem.get("id", "")
+            shortId = fullId.split("_")[0] if fullId else None
+            
+            if itemLat and itemLon and shortId:
+                return itemLat, itemLon, shortId
         except Exception:
             pass
         return None
 
     @staticmethod
-    def _build_2gis_url(lat: float, lon: float, short_id: str) -> str:
-        return f"https://2gis.ae/dubai/directions/points/%7C{lon}%2C{lat}%3B{short_id}"
+    def _build_2gis_url(lat: float, lon: float, shortId: str) -> str:
+        return f"https://2gis.ae/dubai/directions/points/%7C{lon}%2C{lat}%3B{shortId}"
 
-    def _validate_record(self, r: dict) -> None:
-        has_location = r.get("floor") or r.get("unit")
-        has_navigation = r.get("map_url") or r.get("directions_url")
-        has_content = r.get("content")
-        assert has_location or has_navigation or has_content, (
+    def _validate_record(self, record: dict) -> None:
+        hasLocation = record.get("floor") or record.get("unit")
+        hasNavigation = record.get("map_url") or record.get("directions_url")
+        hasContent = record.get("content")
+
+        assert (hasLocation and hasNavigation) or hasContent, (
             f"[{self.name}] Record has no floor/unit, map_url/directions_url, or content:\n"
-            f"{json.dumps(r, indent=2, ensure_ascii=False)}"
+            f"{json.dumps(record, indent=2, ensure_ascii=False)}"
         )
-        phone = r.get("phone")
+        phone = record.get("phone")
+
         if phone is not None:
             assert re.fullmatch(r"\+\d+", phone), (
                 f"[{self.name}] Invalid phone format '{phone}' in record:\n"
-                f"{json.dumps(r, indent=2, ensure_ascii=False)}"
+                f"{json.dumps(record, indent=2, ensure_ascii=False)}"
             )
 
     def run(self) -> None:
         results = []
-        for r in self.scrape():
-            self._validate_record(r)
-            results.append(r)
-        results.sort(key=lambda r: r.get("name", "").lower())
-        with open(self.output_file, "w", encoding="utf-8") as f:
-            json.dump(results, f, indent=2, ensure_ascii=False)
+        for record in self.scrape():
+            self._validate_record(record)
+            results.append(record)
+
+        results.sort(key=lambda record: record.get("name", "").lower())
+        with open(self.output_file, "w", encoding="utf-8") as outputFile:
+            json.dump(results, outputFile, indent=2, ensure_ascii=False)
         print(f"Done. Saved {len(results)} records to {self.output_file}")

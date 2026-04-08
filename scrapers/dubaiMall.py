@@ -46,26 +46,28 @@ class DubaiMallScraper(BaseScraper):
         return os.path.join(os.path.dirname(os.path.dirname(__file__)), "results", "dubai_mall_dine.json")
 
     @staticmethod
-    def _parse_unit(unit_number):
+    def _parse_unit(unitNumber):
         """Split 'TDM-GF-016' into ('Ground Floor', '016')."""
-        if not unit_number:
+        if not unitNumber:
             return None, None
-        parts = unit_number.split("-")
+        parts = unitNumber.split("-")
+
         if len(parts) < 3:
-            return None, unit_number
-        floor_name = ZONE_MAP.get(parts[1], parts[1])
+            return None, unitNumber
+        
+        floorName = ZONE_MAP.get(parts[1], parts[1])
         unit = "-".join(parts[2:])
-        return floor_name, unit
+        return floorName, unit
 
     @staticmethod
-    def _build_map_url(unit_number):
-        if not unit_number:
+    def _build_map_url(unitNumber):
+        if not unitNumber:
             return None
         return (
             f"{ABUZZ_EMBED}?site={ABUZZ_SITE}&apiKey={ABUZZ_API_KEY}"
             f"&searchUI=true&servicesList=true&baseui=true"
             f"&poiUI=true&pathUI=true&hover=true&lazyld=false&mobile=true"
-            f"&node={unit_number}"
+            f"&node={unitNumber}"
         )
 
     @staticmethod
@@ -75,38 +77,37 @@ class DubaiMallScraper(BaseScraper):
         return response.json()
 
     def scrape(self):
-        stores = self._fetch_stores()
-        dine_stores = [
-            s for s in stores
-            if any(c.get("id") in DINE_CATEGORY_IDS for c in (s.get("categories") or []))
+        allStores = self._fetch_stores()
+        dineStores = [
+            store for store in allStores
+            if any(category.get("id") in DINE_CATEGORY_IDS for category in (store.get("categories") or []))
         ]
-        print(f"Found {len(dine_stores)} dine stores.")
+        print(f"Found {len(dineStores)} dine stores.")
 
         results = []
-        for i, store in enumerate(dine_stores, 1):
-            name = store.get("name")
-            unit_number = store.get("unitNumber")
-            floor, unit = self._parse_unit(unit_number)
+        for index, store in enumerate(dineStores, 1):
+            storeName = store.get("name")
+            unitNumber = store.get("unitNumber")
+            floor, unit = self._parse_unit(unitNumber)
 
-            parking = store.get("closestParkingEntrance") or {}
-            lat = parking.get("latitude")
-            lng = parking.get("longitude")
+            parkingEntrance = store.get("closestParkingEntrance") or {}
+            latitude = parkingEntrance.get("latitude")
+            longitude = parkingEntrance.get("longitude")
 
-            twogis = self._query_2gis(name, lng, lat) if lat and lng else None
-            directions_url = self._build_2gis_url(*twogis) if twogis else None
+            twoGisResult = self._query_2gis(storeName, longitude, latitude) if latitude and longitude else None
+            directionsUrl = self._build_2gis_url(*twoGisResult) if twoGisResult else None
             time.sleep(0.15)
-            print(f"  [{i}/{len(dine_stores)}] {name}")
+            print(f"  [{index}/{len(dineStores)}] {storeName}")
 
-            record = {
-                "name": name,
+            results.append({
+                "name": storeName,
                 "url": f"{BASE_URL}/en/shop/{store.get('slug')}",
                 "phone": store.get("phone"),
                 "floor": floor,
                 "unit": unit,
-                "map_url": self._build_map_url(unit_number),
-                "directions_url": directions_url,
-            }
-            results.append(record)
+                "map_url": self._build_map_url(unitNumber),
+                "directions_url": directionsUrl,
+            })
         return results
 
 

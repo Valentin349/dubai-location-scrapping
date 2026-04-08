@@ -27,34 +27,35 @@ class _DeliverooBaseScraper(BaseScraper):
         response = self._session.get(url, timeout=15)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
-        script = soup.find("script", id="__NEXT_DATA__")
-        return json.loads(script.string)
+        nextDataScript = soup.find("script", id="__NEXT_DATA__")
+        return json.loads(nextDataScript.string)
 
     def _get_index_links(self):
-        soup = BeautifulSoup(self._session.get(self.index_url, timeout=15).text, "html.parser")
-        links = []
-        for tag in soup.select("article section ol li em a[href]"):
-            href = tag["href"]
-            links.append(urljoin(BASE_URL, href))
-        return links
+        response = self._session.get(self.index_url, timeout=15)
+        soup = BeautifulSoup(response.text, "html.parser")
+        locationLinks = []
+        for linkTag in soup.select("article section ol li em a[href]"):
+            href = linkTag["href"]
+            locationLinks.append(urljoin(BASE_URL, href))
+        return locationLinks
 
     def _parse_location_page(self, url):
-        data = self._get_next_data(url)
-        doc = data["props"]["pageProps"]["sliceDocument"]["data"]
+        pageData = self._get_next_data(url)
+        document = pageData["props"]["pageProps"]["sliceDocument"]["data"]
 
-        title = doc.get("post_title", "")
-        body = doc.get("body", [])
+        title = document.get("post_title", "")
+        body = document.get("body", [])
         content = []
 
-        for slice_ in body:
-            slice_type = slice_.get("slice_type")
-            if slice_type == "image":
-                img = slice_.get("primary", {}).get("image", {})
-                img_url = img.get("url")
-                if img_url:
-                    content.append({"type": "image", "url": img_url})
-            elif slice_type == "text_content":
-                for block in slice_.get("primary", {}).get("content", []):
+        for pageSlice in body:
+            sliceType = pageSlice.get("slice_type")
+            if sliceType == "image":
+                imageData = pageSlice.get("primary", {}).get("image", {})
+                imageUrl = imageData.get("url")
+                if imageUrl:
+                    content.append({"type": "image", "url": imageUrl})
+            elif sliceType == "text_content":
+                for block in pageSlice.get("primary", {}).get("content", []):
                     text = block.get("text", "").strip()
                     if text:
                         content.append({"type": "instruction", "text": text})
@@ -72,8 +73,8 @@ class _DeliverooBaseScraper(BaseScraper):
 
     def scrape(self):
         print(f"Fetching {self.index_url} ...")
-        links = self._get_index_links()
-        results = [self._parse_location_page(url) for url in links]
+        locationLinks = self._get_index_links()
+        results = [self._parse_location_page(url) for url in locationLinks]
         print(f"Found {len(results)} locations.")
         return results
 

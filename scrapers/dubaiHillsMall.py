@@ -56,155 +56,162 @@ class DubaiHillsMallScraper(BaseScraper):
         return os.path.join(os.path.dirname(os.path.dirname(__file__)), "results", "dubai_hills_mall_dine.json")
 
     def _get_pointr_token(self):
-        r = requests.post(f"{POINTR_API}/auth/token", json={
+        response = requests.post(f"{POINTR_API}/auth/token", json={
             "client_id": POINTR_CLIENT_ID,
             "client_secret": POINTR_CLIENT_SECRET,
             "grant_type": "client_credentials",
         }, headers={"Content-Type": "application/json"}, timeout=15)
-        r.raise_for_status()
-        return r.json()["result"]["access_token"]
+        response.raise_for_status()
 
-    def _fetch_pointr_pois(self, token):
-        r = requests.get(
+        return response.json()["result"]["access_token"]
+
+    def _fetch_pointr_pois(self, accessToken):
+        response = requests.get(
             f"{POINTR_API}/sites/{POINTR_SITE_ID}/pois",
-            headers={"Authorization": f"Bearer {token}"},
+            headers={"Authorization": f"Bearer {accessToken}"},
             timeout=30,
         )
-        r.raise_for_status()
-        features = r.json()["result"]["features"]
+        response.raise_for_status()
+        features = response.json()["result"]["features"]
 
-        poi_by_eid = {}
-        for f in features:
-            props = f["properties"]
-            eid = props.get("eid")
+        poiByEid = {}
+        for feature in features:
+            properties = feature["properties"]
+            eid = properties.get("eid")
+
             if not eid:
                 continue
-            geom = f.get("geometry")
+
+            geometry = feature.get("geometry")
             centroid = None
-            if geom and geom.get("type") == "Polygon":
-                coords = geom["coordinates"][0]
-                lngs = [c[0] for c in coords]
-                lats = [c[1] for c in coords]
+
+            if geometry and geometry.get("type") == "Polygon":
+                coords = geometry["coordinates"][0]
+                longitudes = [coordinate[0] for coordinate in coords]
+                latitudes = [coordinate[1] for coordinate in coords]
                 centroid = {
-                    "lat": round(sum(lats) / len(lats), 8),
-                    "lng": round(sum(lngs) / len(lngs), 8),
+                    "lat": round(sum(latitudes) / len(latitudes), 8),
+                    "lng": round(sum(longitudes) / len(longitudes), 8),
                 }
-            poi_by_eid[eid] = {
-                "fid": props.get("fid"),
-                "floor": LEVEL_MAP.get(props.get("lvl"), FLOOR_CODE_MAP.get(
+
+            poiByEid[eid] = {
+                "fid": properties.get("fid"),
+                "floor": LEVEL_MAP.get(properties.get("lvl"), FLOOR_CODE_MAP.get(
                     eid.split("-")[1] if len(eid.split("-")) > 1 else "", ""
                 )),
                 "centroid": centroid,
             }
-        return poi_by_eid
+        return poiByEid
 
     def _get_store_links(self):
-        resp = self._session.get(DINE_URL, timeout=15)
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
+        response = self._session.get(DINE_URL, timeout=15)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
 
         stores = []
-        for a in soup.select("a.ctaDetailsBtn"):
-            href = a.get("href", "")
-            full_url = href if href.startswith("http") else BASE_URL + href
-            card_footer = a.find_parent(class_="cardFooter")
-            name_tag = card_footer.find("p") if card_footer else None
-            name = name_tag.get_text(strip=True) if name_tag else full_url.split("/")[-2].replace("-", " ").title()
-            stores.append({"name": name, "url": full_url})
+        for buttonNode in soup.select("a.ctaDetailsBtn"):
+            href = buttonNode.get("href", "")
+            fullUrl = href if href.startswith("http") else BASE_URL + href
+            cardFooter = buttonNode.find_parent(class_="cardFooter")
+            nameTag = cardFooter.find("p") if cardFooter else None
+            storeName = nameTag.get_text(strip=True) if nameTag else fullUrl.split("/")[-2].replace("-", " ").title()
+            stores.append({"name": storeName, "url": fullUrl})
         return stores
 
     @staticmethod
-    def _parse_store_code(code):
-        if not code:
+    def _parse_store_code(storeCode):
+        if not storeCode:
             return None, None
-        parts = code.split("-")
+        
+        parts = storeCode.split("-")
         if len(parts) < 3:
             return None, None
-        floor_name = FLOOR_CODE_MAP.get(parts[1], parts[1])
+        
+        floorName = FLOOR_CODE_MAP.get(parts[1], parts[1])
         unit = "-".join(parts[2:])
-        return floor_name, unit
+        return floorName, unit
 
     def _scrape_store(self, store):
         url = store["url"]
         try:
-            resp = self._session.get(url, timeout=15)
-            resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
+            response = self._session.get(url, timeout=15)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, "html.parser")
 
-            store_code = None
-            m = re.search(r"var\s+ShopToSearch\s*=\s*'([^']+)'", resp.text)
-            if m:
-                store_code = m.group(1)
+            storeCode = None
+            storeCodeMatch = re.search(r"var\s+ShopToSearch\s*=\s*'([^']+)'", response.text)
+            if storeCodeMatch:
+                storeCode = storeCodeMatch.group(1)
 
-            poi_fid = None
-            m2 = re.search(r"ptrHighlightPoiIdentifier=([\w-]+)", resp.text)
-            if m2:
-                poi_fid = m2.group(1)
+            poiFid = None
+            poiFidMatch = re.search(r"ptrHighlightPoiIdentifier=([\w-]+)", response.text)
+            if poiFidMatch:
+                poiFid = poiFidMatch.group(1)
 
-            floor_from_code, unit = self._parse_store_code(store_code)
+            floorFromCode, unit = self._parse_store_code(storeCode)
 
-            parking = None
-            parking_tag = soup.find(class_="neerest-parking")
-            if parking_tag:
-                parking = re.sub(r"nearest parking[:\s]*", "", parking_tag.get_text(strip=True), flags=re.I).strip()
+            nearestParking = None
+            parkingTag = soup.find(class_="neerest-parking")
+            if parkingTag:
+                nearestParking = re.sub(r"nearest parking[:\s]*", "", parkingTag.get_text(strip=True), flags=re.I).strip()
 
             phone = None
-            phone_tag = soup.find("a", href=re.compile(r"^tel:"))
-            if phone_tag:
-                phone = phone_tag.get_text(strip=True)
+            phoneTag = soup.find("a", href=re.compile(r"^tel:"))
+            if phoneTag:
+                phone = phoneTag.get_text(strip=True)
 
             return {
                 "name": store["name"],
                 "url": url,
-                "store_code": store_code,
-                "_poi_fid": poi_fid,
-                "floor": floor_from_code,
+                "store_code": storeCode,
+                "_poi_fid": poiFid,
+                "floor": floorFromCode,
                 "unit": unit,
-                "nearest_parking": parking,
+                "nearest_parking": nearestParking,
                 "phone": phone,
             }
 
-        except Exception as e:
+        except Exception as error:
             return {
                 "name": store["name"],
                 "url": url,
-                "error": str(e),
+                "error": str(error),
             }
 
     def scrape(self):
-        token = self._get_pointr_token()
-        poi_map = self._fetch_pointr_pois(token)
-        print(f"Loaded {len(poi_map)} POIs from Pointr.")
+        accessToken = self._get_pointr_token()
+        poiMap = self._fetch_pointr_pois(accessToken)
+        print(f"Loaded {len(poiMap)} POIs from Pointr.")
 
         stores = self._get_store_links()
         print(f"Found {len(stores)} dine stores.")
 
         results = []
         with ThreadPoolExecutor(max_workers=8) as executor:
-            futures = {executor.submit(self._scrape_store, s): s for s in stores}
+            futures = {executor.submit(self._scrape_store, store): store for store in stores}
             for future in as_completed(futures):
                 results.append(future.result())
 
-        for i, result in enumerate(results, 1):
-            store_code = result.get("store_code")
-            poi_fid = result.pop("_poi_fid", None)
+        for index, result in enumerate(results, 1):
+            storeCode = result.get("store_code")
+            poiFid = result.pop("_poi_fid", None)
             centroid = None
 
-            if store_code and store_code in poi_map:
-                poi = poi_map[store_code]
-                centroid = poi["centroid"]
-                if poi["floor"] and not result.get("floor"):
-                    result["floor"] = poi["floor"]
+            if storeCode and storeCode in poiMap:
+                poiEntry = poiMap[storeCode]
+                centroid = poiEntry["centroid"]
+                if poiEntry["floor"] and not result.get("floor"):
+                    result["floor"] = poiEntry["floor"]
 
             result["map_url"] = (
                 f"https://dubaihills.pointr.cloud/websdk.html"
                 f"?ptrSiteInternalIdentifier=1"
-                f"&ptrHighlightPoiIdentifier={poi_fid}"
-            ) if poi_fid else None
+                f"&ptrHighlightPoiIdentifier={poiFid}"
+            ) if poiFid else None
 
-            twogis = self._query_2gis(result["name"], centroid["lng"], centroid["lat"], radius=300) if centroid else None
-            if twogis:
-                result["directions_url"] = self._build_2gis_url(*twogis)
+            twoGisResult = self._query_2gis(result["name"], centroid["lng"], centroid["lat"], radius=300) if centroid else None
+            if twoGisResult:
+                result["directions_url"] = self._build_2gis_url(*twoGisResult)
             elif centroid:
                 result["directions_url"] = (
                     f"https://2gis.ae/dubai/directions/points/"
@@ -213,7 +220,7 @@ class DubaiHillsMallScraper(BaseScraper):
             else:
                 result["directions_url"] = None
 
-            print(f"  [{i}/{len(results)}] {result['name']}")
+            print(f"  [{index}/{len(results)}] {result['name']}")
             time.sleep(0.15)
 
         return results
