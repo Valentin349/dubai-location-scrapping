@@ -105,7 +105,6 @@ def scrape_store_detail(store):
             raw = header.get("otherstores", "")
             if raw:
                 contact_data = json.loads(html.unescape(raw))
-                print(json.dumps(contact_data, indent=2))
                 if isinstance(contact_data, list):
                     contact_data = contact_data[0] if contact_data else {}
                 result["floor_abbreviation"] = contact_data.get("FloorAbbreviation")
@@ -162,33 +161,24 @@ def lookup_2gis(name):
 
 
 def main():
-    print("Fetching dining directory from Mall of the Emirates...")
     stores = fetch_directory_stores()
-    print(f"Found {len(stores)} dining stores.")
+    print(f"Found {len(stores)} stores.")
 
-    print("Scraping store detail pages and looking up 2GIS URLs...")
     results = []
     for i, store in enumerate(stores, 1):
         result = scrape_store_detail(store)
         result["map_url"] = build_map_url(result.pop("destination_id", None))
-
-        directions_url = lookup_2gis(result["name"])
-        result["directions_url"] = directions_url
+        result["directions_url"] = lookup_2gis(result["name"])
         results.append(result)
         time.sleep(0.15)
-
-        status = directions_url or "no 2GIS match"
-        print(f"  [{i}/{len(stores)}] {result['name']} — {result.get('level')} | {status}")
+        print(f"  [{i}/{len(stores)}] {result['name']}")
 
     results.sort(key=lambda x: x.get("name", "").lower())
-
-    with_2gis = sum(1 for r in results if r.get("directions_url"))
-    print(f"\n{with_2gis}/{len(results)} stores have 2GIS directions URLs.")
 
     output_path = os.path.join(os.path.dirname(__file__), "mall_of_the_emirates_dine.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    print(f"Saved {len(results)} stores to {output_path}")
+    print(f"Done. Saved {len(results)} stores to {output_path}")
 
 
 if __name__ == "__main__":

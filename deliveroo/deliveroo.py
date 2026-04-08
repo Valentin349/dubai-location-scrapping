@@ -1,6 +1,6 @@
 import json
 import os
-import cloudscraper
+from curl_cffi import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
@@ -10,7 +10,7 @@ RESIDENCE_URL = f"{BASE_URL}/news/deliveroo-residence-locations"
 
 
 def make_scraper():
-    return cloudscraper.create_scraper(browser={"browser": "chrome", "platform": "linux"})
+    return requests.Session(impersonate="chrome120")
 
 
 def get_next_data(scraper, url):
